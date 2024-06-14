@@ -6,6 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir .dist",
     "dev": "nodemon --ignore dist/ --ignore test/ --exec babel-node ./src/index.js",
+    "export": "nodemon --ignore dist/ --ignore test/ --exec babel-node ./src/scripts/hpv.export.js",
     "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +24,8 @@
   "dependencies": {
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.7",

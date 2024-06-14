@@ -3,13 +3,12 @@ import { createHttpClient } from "../utils/http";
 class FhirService {
   client;
   constructor() {
-    this.client = createHttpClient({
-      baseURL: "https://hapi.moh.gov.zm/fhir",
-    });
+    this.client = createHttpClient("https://hapi.moh.gov.zm");
   }
 
-  getPatientById(id) {
-    return this.client.get(`/Patient/${id}`);
+  async postBundle(bundle) {
+    const res = await this.client.post("fhir", bundle);
+    return res;
   }
 }
 
